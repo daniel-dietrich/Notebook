@@ -1,0 +1,225 @@
+.root {
+	-fx-background-color: #f5f5f5;
+}
+
+/* Label */
+.label {
+	-fx-text-fill: black;
+}
+
+/* TextField */
+.text-field {
+	-fx-background-radius: 0;
+	-fx-border-width: 1;
+	-fx-border-color: #e6e6e6;
+	-fx-background-color: #ffffff;
+	-fx-text-fill: black;
+	-fx-highlight-fill: #007ACC;
+}
+
+.text-field:hover {
+	-fx-border-color: #e6e6e6;
+	-fx-background-color: #e6e6e6;
+}
+
+.text-field:focused {
+	-fx-border-color: #007ACC;
+	-fx-background-color: #ffffff;
+}
+
+/* ListCell */
+.list-cell {
+	-fx-border-width: 0;
+	-fx-text-fill: black;
+	-fx-background-color: #ffffff;
+}
+
+.list-cell:hover {
+	-fx-background-color: #e6e6e6;
+	-fx-cursor: HAND;
+}
+
+.list-cell:selected {
+	-fx-background-color: -fx-accent;
+	-fx-text-fill: white;
+
+}
+
+/* ListView */
+.list-view {
+	-fx-background-radius: 0;
+	-fx-background-color: #ffffff;
+	-fx-border-width: 1;
+	-fx-border-color: #e6e6e6;
+
+}
+
+.list-view .scroll-bar {
+	-fx-background-insets: 0 -1 0 0;
+}
+
+.list-view .scroll-bar .thumb {
+	-fx-background-insets: 0 3 0 2;
+}
+
+.list-view:hover {
+	-fx-background-insets: 0;
+}
+
+.list-view:focused {
+	-fx-background-insets: 0;
+}
+
+/* Button */
+.button {
+	-fx-border-radius: 0;
+	-fx-border-insets: 0 0 -1 0;
+	-fx-border-width: 1;
+	-fx-border-color: #e6e6e6;
+	-fx-background-color: #ffffff;
+	-fx-text-fill: black;
+	-fx-padding: 6;
+}
+
+.button:focused {
+	-fx-border-color: #007ACC;
+	-fx-background-color: #ffffff;
+}
+
+.button:hover {
+	-fx-border-color: #e6e6e6;
+	-fx-background-color: #e6e6e6;
+	-fx-cursor: HAND;
+}
+
+.button:pressed {
+	-fx-border-color: #007ACC;
+	-fx-background-color: #007ACC;
+	-fx-cursor: HAND;
+}
+
+/* TextArea */
+.text-area {
+	-fx-background-radius: 0;
+	-fx-border-width: 1;
+	-fx-border-color: #e6e6e6;
+	-fx-text-fill: black;
+	-fx-highlight-fill: #007ACC;
+	-fx-background-color: #ffffff;
+}
+
+.text-area:hover {
+	-fx-border-color: #e6e6e6;
+}
+
+.text-area:focused {
+	-fx-border-color: #007ACC;
+	-fx-background-color: #ffffff;
+}
+
+.text-area .content {
+	-fx-background-radius: 0;
+	-fx-border-width: 0;
+	-fx-background-radius: 0;
+	-fx-background-color: #ffffff;
+}
+
+.text-area .scroll-bar {
+	-fx-background-insets: 0 -0.5 0.5 0;
+}
+
+.text-area .scroll-bar .thumb {
+	-fx-background-insets: 0 2 0 2;
+}
+
+/* ScrollBar */
+.scroll-bar {
+	-fx-background-radius: 0;
+	-fx-background-color: #2A2A2C;
+}
+
+.scroll-bar: vertical {
+	-fx-background-radius: 0;
+	-fx-background-color: #2A2A2C;
+}
+
+.scroll-bar>.decrement-button {
+	-fx-background-color: #2A2A2C;
+	-fx-background-radius: 0;
+	-fx-border-width: 0;
+	-fx-cursor: HAND;
+}
+
+.scroll-bar .decrement-button,
+.scroll-bar .increment-button {
+	-fx-cursor: HAND;
+	-fx-border-width: 0;
+	-fx-background-radius: 0;
+}
+
+.scroll-bar .decrement-button:hover,
+.scroll-bar .increment-button:hover {
+	-fx-background-color: #007ACC;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow,
+.scroll-bar:horizontal .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow {
+	-fx-shape: " ";
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+	-fx-background-color: #3D3D3D;
+	-fx-background-radius: 0;
+	-fx-cursor: HAND;
+}
+
+/* Menu */
+.menu-bar {
+	-fx-background-color: #f5f5f5;
+}
+
+.menu-bar .menu-button {
+	-fx-background: #007ACC;
+	-fx-text-fill: black;
+	-fx-padding: 5;
+	-fx-cursor: HAND;
+}
+
+.menu-item {
+	-fx-background-radius: 0;
+	-fx-border-width: 0;
+	-fx-text-fill: black;
+	-fx-background-color: #ffffff;
+}
+
+.menu-item:hover {
+	-fx-background-color: #e6e6e6;
+	-fx-cursor: HAND;
+}
+
+.menu-item:pressed {
+	-fx-background-color: #007ACC;
+	-fx-cursor: HAND;
+	
+}
+
+.context-menu {
+	-fx-background-color: #ffffff;
+	-fx-border-width: 0;
+	-fx-padding: 1;
+}
+
+.context-menu .separator:horizontal .line {
+	-fx-border-color: #e6e6e6 transparent transparent transparent;
+	-fx-border-insets: 1 0 0 0;
+}
+
+.menu-bar > .container > .menu-button:hover > .label ,
+.menu-bar > .container > .menu-button:focused > .label ,
+.menu-bar > .container > .menu-button:showing > .label {
+    -fx-text-fill: white;
+}
+

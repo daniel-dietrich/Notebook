@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainPaneController">
+    <MenuBar layoutY="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Menu text="Plik">
+            <Menu text="Nowy">
+                <MenuItem fx:id="menuNewNote" disable="true" onAction="#onNewNote" text="Notatka" />
+                <MenuItem onAction="#onNewFolder" text="Folder" />
+            </Menu>
+            <SeparatorMenuItem />
+         <CheckMenuItem fx:id="darkModeMenuItem" mnemonicParsing="false" onAction="#onToggleDarkMode" text="Tryb ciemny" />
+            <SeparatorMenuItem />
+            <MenuItem onAction="#onClose" text="Zakończ" />
+        </Menu>
+        <Menu text="Pomoc">
+            <MenuItem onAction="#onAbout" text="O programie" />
+        </Menu>
+    </MenuBar>
+    <HBox layoutY="27.0" prefHeight="374.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+        <VBox minWidth="125.0" prefHeight="200.0" prefWidth="175.0">
+            <HBox maxHeight="-Infinity" minHeight="38.0" prefHeight="40.0">
+                <Label text="Foldery">
+                    <HBox.margin>
+                        <Insets bottom="5.0" top="12.0" />
+                    </HBox.margin>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button fx:id="newFolderButton" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onNewFolder" prefHeight="30.0" prefWidth="30.0" text="+" textAlignment="CENTER">
+                    <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                    </HBox.margin>
+                </Button>
+            </HBox>
+            <ListView fx:id="folderList" onMouseClicked="#onMouseClickFolderList" VBox.vgrow="ALWAYS">
+                <VBox.margin>
+                    <Insets bottom="5.0" />
+                </VBox.margin>
+            <contextMenu>
+               <ContextMenu onShown="#onFolderContextMenuShown">
+                 <items>
+                     <MenuItem fx:id="menuRenameFolder" disable="true" onAction="#onRenameFolder" text="Zmień nazwę" />
+                     <MenuItem fx:id="menuDeleteFolder" disable="true" onAction="#onDeleteFolder" text="Usuń" />
+                 </items>
+               </ContextMenu>
+            </contextMenu>
+            </ListView>
+         <HBox.margin>
+            <Insets left="5.0" />
+         </HBox.margin>
+        </VBox>
+        <VBox fx:id="areaNotes" disable="true" minWidth="125.0" prefHeight="200.0" prefWidth="175.0">
+            <HBox maxHeight="-Infinity" minHeight="38.0" prefHeight="40.0">
+                <Label text="Notatki">
+                    <HBox.margin>
+                        <Insets bottom="5.0" right="5.0" top="12.0" />
+                    </HBox.margin>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button fx:id="newNoteButton" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onNewNote" prefHeight="30.0" prefWidth="30.0" text="+" textAlignment="CENTER">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                    </HBox.margin>
+                </Button>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            </HBox>
+         <TextField fx:id="searchField" onKeyTyped="#OnSearchInput" promptText="Wyszukaj">
+            <VBox.margin>
+               <Insets bottom="5.0" />
+            </VBox.margin>
+         </TextField>
+            <ListView fx:id="noteList" minHeight="30.0" minWidth="30.0" onMouseClicked="#onMouseClickNoteList" prefHeight="374.0" prefWidth="125.0" VBox.vgrow="ALWAYS">
+            <contextMenu>
+               <ContextMenu onShown="#onNoteContextMenuShown">
+                 <items>
+                     <MenuItem fx:id="menuRenameNote" disable="true" onAction="#onRenameNote" text="Zmień nazwę" />
+                     <MenuItem fx:id="menuDeleteNote" disable="true" onAction="#onDeleteNote" text="Usuń" />
+                 </items>
+               </ContextMenu>
+            </contextMenu>
+            <VBox.margin>
+               <Insets bottom="5.0" />
+            </VBox.margin></ListView>
+         <HBox.margin>
+            <Insets left="5.0" />
+         </HBox.margin>
+        </VBox>
+        <VBox fx:id="areaEditor" disable="true" minWidth="400.0" prefHeight="374.0" HBox.hgrow="ALWAYS">
+            <TextField fx:id="titleField" promptText="Tytuł" VBox.vgrow="ALWAYS">
+                <VBox.margin>
+                    <Insets bottom="7.0" left="5.0" right="5.0" top="7.0" />
+                </VBox.margin>
+            </TextField>
+            <TextArea fx:id="textArea" prefHeight="288.0" prefWidth="400.0" promptText="Treść notatki" wrapText="true" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+               <Insets left="5.0" right="5.0" />
+            </VBox.margin></TextArea>
+            <HBox>
+                <HBox HBox.hgrow="ALWAYS" />
+                <Button onAction="#onWrite" text="Zapisz">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                </Button>
+            </HBox>
+        </VBox>
+    </HBox>
+</AnchorPane>
