@@ -1,6 +1,10 @@
 # Notebook
 Aplikacja JavaFX do organizacji notatek
 
+<p align="center">
+  <img src="screenshot.png">
+</p>
+
 # Opis
 Aplikacja umożliwia dynamiczną organizację oraz edycję notatek w dobranych pod własne potrzeby folderach. Kod źródłowy został napisany z myślą o architekturze MVC z wykorzystaniem zasady DRY.
 
