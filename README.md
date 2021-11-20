@@ -31,7 +31,7 @@ Ich dostępność oraz zawartość jest aktualizowana kaskadowo.
 * main:		 (metoda main)
 * models:	 (modele)
 * stylesheets:	 (kaskadowe arkusze stylów)
-* toolkit:	 (klasy z metodami pomocnymi)
+* toolkit:	 (klasy z metodami pomoczniczymi)
 * views:	 (zawiera pliki .fxml)
 
 # Wykorzystane oprogramowanie
